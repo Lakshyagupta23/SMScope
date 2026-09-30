@@ -371,21 +371,81 @@ async def run_demo_simulation():
     }
 
     DEMO_SESSIONS = [
-        {"src_ip": "10.0.1.12",  "dst_ip": "142.250.80.78",  "dst_port": 443, "tls_version": "TLSv1.3", "cipher_suite": "TLS_AES_256_GCM_SHA384",         "cert_issuer": "Google Trust Services",    "server_name": "mail.google.com",    "flow_bytes": 92410},
-        {"src_ip": "10.0.1.14",  "dst_ip": "52.96.32.18",   "dst_port": 587, "tls_version": "TLSv1.2", "cipher_suite": "TLS_RSA_WITH_AES_128_CBC_SHA",    "cert_issuer": "Microsoft IT TLS CA 5",    "server_name": "smtp.office365.com", "flow_bytes": 43200},
-        {"src_ip": "10.0.1.22",  "dst_ip": "198.41.0.4",    "dst_port": 25,  "tls_version": None,       "cipher_suite": None,                              "cert_issuer": None,                       "server_name": None,                 "flow_bytes": 8900},
-        {"src_ip": "10.0.1.55",  "dst_ip": "104.18.22.44",  "dst_port": 443, "tls_version": "TLSv1.2", "cipher_suite": "TLS_ECDHE_RSA_WITH_RC4_128_SHA",  "cert_issuer": "Cloudflare Inc ECC CA-3",  "server_name": "mail.proton.me",     "flow_bytes": 210800},
-        {"src_ip": "10.0.1.7",   "dst_ip": "209.85.220.69", "dst_port": 993, "tls_version": "TLSv1.3", "cipher_suite": "TLS_AES_128_GCM_SHA256",          "cert_issuer": "Google Trust Services",    "server_name": "imap.gmail.com",     "flow_bytes": 55600},
-        {"src_ip": "10.0.1.88",  "dst_ip": "185.107.80.10", "dst_port": 443, "tls_version": "SSLv3",   "cipher_suite": "SSL_RSA_WITH_3DES_EDE_CBC_SHA",   "cert_issuer": "COMODO CA Limited",        "server_name": "legacy-mail.corp",   "flow_bytes": 14300},
-        {"src_ip": "10.0.1.33",  "dst_ip": "40.101.81.32",  "dst_port": 587, "tls_version": "TLSv1.2", "cipher_suite": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384", "cert_issuer": "DigiCert Inc",      "server_name": "smtp.office365.com", "flow_bytes": 67800},
-        {"src_ip": "10.0.1.19",  "dst_ip": "173.194.68.108","dst_port": 465, "tls_version": "TLSv1.1", "cipher_suite": "TLS_RSA_WITH_AES_256_CBC_SHA",    "cert_issuer": "Equifax Secure CA",        "server_name": "smtp.gmail.com",     "flow_bytes": 31200},
-        {"src_ip": "10.0.1.41",  "dst_ip": "8.8.8.8",       "dst_port": 443, "tls_version": "TLSv1.3", "cipher_suite": "TLS_AES_256_GCM_SHA384",         "cert_issuer": "Let's Encrypt",            "server_name": "api.emailsec.io",    "flow_bytes": 18900},
-        {"src_ip": "10.0.1.60",  "dst_ip": "66.211.168.0",  "dst_port": 25,  "tls_version": "TLSv1.2", "cipher_suite": "TLS_RSA_WITH_RC4_128_MD5",        "cert_issuer": "Sendgrid Inc",             "server_name": "smtp.sendgrid.net",  "flow_bytes": 23400},
+        # 1. SECURE: Gmail IMAP TLSv1.3 - score ~100
+        {"src_ip": "10.0.1.7", "dst_ip": "209.85.220.69", "dst_port": 993, "proto": "TCP",
+         "server_name": "imap.gmail.com", "email_protocol": "IMAP",
+         "selected_tls_version": "TLSv1.3", "selected_cipher_suite": "TLS_AES_256_GCM_SHA384",
+         "server_hello_seen": True, "encryption_state": "encrypted",
+         "forward_secrecy": {"has_forward_secrecy": True, "reason": "ECDHE key exchange observed"},
+         "flow_bytes": 92410, "pkt_count": 210},
+        # 2. CRITICAL: Plaintext SMTP port 25 - score ~50
+        {"src_ip": "10.0.1.22", "dst_ip": "198.41.0.4", "dst_port": 25, "proto": "TCP",
+         "server_name": None, "email_protocol": "SMTP",
+         "selected_tls_version": None, "selected_cipher_suite": None,
+         "server_hello_seen": False, "encryption_state": "plaintext",
+         "payload_is_plaintext": True, "plaintext_payload_hex": "4d41494c2046524f4d3a3c61646d696e407465737430302e636f6d3e",
+         "forward_secrecy": {"has_forward_secrecy": None, "reason": "No TLS observed"},
+         "flow_bytes": 8900, "pkt_count": 32},
+        # 3. CRITICAL: SSLv3 + 3DES - score ~10
+        {"src_ip": "10.0.1.88", "dst_ip": "185.107.80.10", "dst_port": 443, "proto": "TCP",
+         "server_name": "legacy-mail.corp", "email_protocol": "HTTPS",
+         "selected_tls_version": "SSLv3", "selected_cipher_suite": "SSL_RSA_WITH_3DES_EDE_CBC_SHA",
+         "server_hello_seen": True, "encryption_state": "encrypted",
+         "forward_secrecy": {"has_forward_secrecy": False, "reason": "RSA key exchange has no forward secrecy"},
+         "flow_bytes": 14300, "pkt_count": 45},
+        # 4. CRITICAL: RC4 cipher - score ~40
+        {"src_ip": "10.0.1.55", "dst_ip": "104.18.22.44", "dst_port": 443, "proto": "TCP",
+         "server_name": "mail.proton.me", "email_protocol": "HTTPS",
+         "selected_tls_version": "TLSv1.2", "selected_cipher_suite": "TLS_ECDHE_RSA_WITH_RC4_128_SHA",
+         "server_hello_seen": True, "encryption_state": "encrypted",
+         "forward_secrecy": {"has_forward_secrecy": True, "reason": "ECDHE key exchange observed"},
+         "flow_bytes": 210800, "pkt_count": 420},
+        # 5. HIGH: TLSv1.1 deprecated - score ~65
+        {"src_ip": "10.0.1.19", "dst_ip": "173.194.68.108", "dst_port": 465, "proto": "TCP",
+         "server_name": "smtp.gmail.com", "email_protocol": "SMTPS",
+         "selected_tls_version": "TLSv1.1", "selected_cipher_suite": "TLS_RSA_WITH_AES_256_CBC_SHA",
+         "server_hello_seen": True, "encryption_state": "encrypted",
+         "forward_secrecy": {"has_forward_secrecy": False, "reason": "RSA key exchange has no forward secrecy"},
+         "flow_bytes": 31200, "pkt_count": 88},
+        # 6. HIGH: TLSv1.2 + CBC + no FS - score ~75
+        {"src_ip": "10.0.1.14", "dst_ip": "52.96.32.18", "dst_port": 587, "proto": "TCP",
+         "server_name": "smtp.office365.com", "email_protocol": "SMTP",
+         "selected_tls_version": "TLSv1.2", "selected_cipher_suite": "TLS_RSA_WITH_AES_128_CBC_SHA",
+         "server_hello_seen": True, "encryption_state": "encrypted",
+         "forward_secrecy": {"has_forward_secrecy": False, "reason": "RSA static key exchange, no PFS"},
+         "flow_bytes": 43200, "pkt_count": 120},
+        # 7. SECURE: Office365 SMTP ECDHE - score ~100
+        {"src_ip": "10.0.1.33", "dst_ip": "40.101.81.32", "dst_port": 587, "proto": "TCP",
+         "server_name": "smtp.office365.com", "email_protocol": "SMTP",
+         "selected_tls_version": "TLSv1.2", "selected_cipher_suite": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+         "server_hello_seen": True, "encryption_state": "encrypted",
+         "forward_secrecy": {"has_forward_secrecy": True, "reason": "ECDHE key exchange observed"},
+         "flow_bytes": 67800, "pkt_count": 180},
+        # 8. CRITICAL: MD5-based RC4 suite
+        {"src_ip": "10.0.1.60", "dst_ip": "66.211.168.0", "dst_port": 25, "proto": "TCP",
+         "server_name": "smtp.sendgrid.net", "email_protocol": "SMTP",
+         "selected_tls_version": "TLSv1.2", "selected_cipher_suite": "TLS_RSA_WITH_RC4_128_MD5",
+         "server_hello_seen": True, "encryption_state": "encrypted",
+         "forward_secrecy": {"has_forward_secrecy": False, "reason": "RSA key exchange, no forward secrecy"},
+         "flow_bytes": 23400, "pkt_count": 60},
+        # 9. SECURE: Let's Encrypt TLS 1.3
+        {"src_ip": "10.0.1.41", "dst_ip": "8.8.8.8", "dst_port": 443, "proto": "TCP",
+         "server_name": "api.emailsec.io", "email_protocol": "HTTPS",
+         "selected_tls_version": "TLSv1.3", "selected_cipher_suite": "TLS_AES_256_GCM_SHA384",
+         "server_hello_seen": True, "encryption_state": "encrypted",
+         "forward_secrecy": {"has_forward_secrecy": True, "reason": "TLS 1.3 always provides forward secrecy"},
+         "flow_bytes": 18900, "pkt_count": 55},
+        # 10. HIGH: TLSv1.0 deprecated
+        {"src_ip": "10.0.1.99", "dst_ip": "74.125.28.109", "dst_port": 993, "proto": "TCP",
+         "server_name": "imap.legacy-corp.in", "email_protocol": "IMAP",
+         "selected_tls_version": "TLSv1.0", "selected_cipher_suite": "TLS_RSA_WITH_AES_128_CBC_SHA",
+         "server_hello_seen": True, "encryption_state": "encrypted",
+         "forward_secrecy": {"has_forward_secrecy": False, "reason": "RSA key exchange, no forward secrecy"},
+         "flow_bytes": 12100, "pkt_count": 38},
     ]
 
     evaluated = []
-    for index, raw in enumerate(DEMO_SESSIONS):
-        session = {**raw, "proto": "TCP", "pkt_count": random.randint(12, 340)}
+    for index, session in enumerate(DEMO_SESSIONS):
         scored = risk_engine.evaluate_session_risk(session)
         record = {
             **session,
