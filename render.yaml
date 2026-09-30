@@ -16,8 +16,4 @@ services:
       - key: PORT
         value: "8000"
       - key: SECUREMAILSCOPE_DATABASE_URL
-        value: sqlite:////data/securemailscope.db
-    disk:
-      name: evidence-data
-      mountPath: /data
-      sizeGB: 1
+        value: sqlite:////tmp/securemailscope.db
