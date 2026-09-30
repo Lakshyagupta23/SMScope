@@ -2,7 +2,7 @@ import { BACKEND_URL } from '../config';
 import { record, text } from './sessions';
 
 const TOKEN_KEY = 'securemailscope.apiToken';
-export function getApiToken(): string { return sessionStorage.getItem(TOKEN_KEY) ?? ''; }
+export function getApiToken(): string { return import.meta.env.VITE_API_TOKEN || sessionStorage.getItem(TOKEN_KEY) || ''; }
 export function setApiToken(token: string): void {
   if (token.trim()) sessionStorage.setItem(TOKEN_KEY, token.trim());
   else sessionStorage.removeItem(TOKEN_KEY);

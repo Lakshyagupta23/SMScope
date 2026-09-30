@@ -52,7 +52,7 @@ export function SystemConfig({ analysisId }: { analysisId: string }) {
         </label>
         <button type="submit" className="cybr-btn">Save Token & Reconnect<span className="cybr-btn__glitch">Save Token & Reconnect</span><span className="cybr-btn__tag">AUTH</span></button>
       </form>
-      <p className="text-xs text-slate-500 leading-relaxed border-l-2 border-cyan-500/30 pl-3">Stored only in sessionStorage for this tab. Configure SECUREMAILSCOPE_API_TOKEN on the backend; it is never bundled into the frontend. Without a configured backend token, only permitted loopback passive analysis is available. Capture, response and flush require a configured token.</p>
+      <p className="text-xs text-slate-500 leading-relaxed border-l-2 border-cyan-500/30 pl-3">Stored only in sessionStorage for this tab, OR globally bypassed by setting <strong>VITE_API_TOKEN</strong> in Vercel environment variables. Configure SECUREMAILSCOPE_API_TOKEN on the backend. Without a configured backend token, only permitted loopback passive analysis is available. Capture, response and flush require a configured token.</p>
     </CyberCard>
     
     {message && <div className="p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg"><p role="status" className="text-emerald-400 text-sm font-medium">{message}</p></div>}
