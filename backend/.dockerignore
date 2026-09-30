@@ -1,0 +1,37 @@
+# Backend .dockerignore
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.git/
+.gitignore
+*.log
+*.db
+.DS_Store
+*.swp
+*.swo
+.env
+.env.local
+.vscode/
+.idea/
+tests/__pycache__/
+.pytest_cache/
+# Don't copy large PCAP files during build
+*.pcap
+*.pcapng
+ingress_pcap/
+processed_pcap/
+failed_pcap/
+*.db-*
+*.sqlite*
+*.pcap.ready
+*.pcapng.ready
+*.processing
+fw_blocklist.txt
+models/
+.env.*
+.venv/
+venv/

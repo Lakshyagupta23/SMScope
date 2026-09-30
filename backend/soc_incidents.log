@@ -1,0 +1,694 @@
+
+============================================================
+[Wed Sep 30 13:59:14 2026] INCIDENT LOG: 1.2.3.4
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       1.2.3.4
+Alert Time:      Wed Sep 30 13:59:14 2026
+Risk Factors:    See full report
+Remediations:    See full report
+
+IPS Mitigation: Not attempted or result not provided.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 13:59:14 2026] INCIDENT LOG: 5.5.5.5
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       5.5.5.5
+Alert Time:      Wed Sep 30 13:59:14 2026
+Risk Factors:    test
+Remediations:    See full report
+
+IPS Mitigation: Not attempted or result not provided.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 13:59:14 2026] INCIDENT LOG: 9.9.9.9
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       9.9.9.9
+Alert Time:      Wed Sep 30 13:59:14 2026
+Risk Factors:    See full report
+Remediations:    See full report
+
+IPS Mitigation: Not attempted or result not provided.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 13:59:14 2026] INCIDENT LOG: 1.2.3.4
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       1.2.3.4
+Alert Time:      Wed Sep 30 13:59:14 2026
+Risk Factors:    See full report
+Remediations:    See full report
+
+IPS Mitigation Status: DRY_RUN
+IPS Details: Would have blocked
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 13:59:14 2026] INCIDENT LOG: 192.168.1.1
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       192.168.1.1
+Alert Time:      Wed Sep 30 13:59:14 2026
+Risk Factors:    See full report
+Remediations:    IPS DRY_RUN: Would have blocked 192.168.1.1 — live enforcement disabled (set IPS_DRY_RUN=0 to enable)., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: DRY_RUN
+IPS Details: DRY_RUN: Would execute: [netsh advfirewall firewall add rule name='SecureMailScope_Block_192.168.1.1' dir=in action=block remoteip=192.168.1.1] — No firewall change made. Set IPS_DRY_RUN=0 to enable live enforcement.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 13:59:14 2026] INCIDENT LOG: Unknown
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       Unknown
+Alert Time:      Wed Sep 30 13:59:14 2026
+Risk Factors:    See full report
+Remediations:    IPS FAILED: Could not block Unknown — REJECTED: 'Unknown' is not a valid IP address. Aborting to prevent command injection., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: FAILED
+IPS Details: REJECTED: 'Unknown' is not a valid IP address. Aborting to prevent command injection.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:00:44 2026] INCIDENT LOG: 10.0.0.42
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       10.0.0.42
+Alert Time:      Wed Sep 30 14:00:44 2026
+Risk Factors:    See full report
+Remediations:    IPS DRY_RUN: Would have blocked 10.0.0.42 — live enforcement disabled (set IPS_DRY_RUN=0 to enable)., Disable SSLv2 and SSLv3 immediately. Upgrade to TLS 1.2 minimum, TLS 1.3 preferred.
+
+IPS Mitigation Status: DRY_RUN
+IPS Details: DRY_RUN: Would execute: [netsh advfirewall firewall add rule name='SecureMailScope_Block_10.0.0.42' dir=in action=block remoteip=10.0.0.42] — No firewall change made. Set IPS_DRY_RUN=0 to enable live enforcement.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:00:44 2026] INCIDENT LOG: 192.168.5.20
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       192.168.5.20
+Alert Time:      Wed Sep 30 14:00:44 2026
+Risk Factors:    See full report
+Remediations:    IPS DRY_RUN: Would have blocked 192.168.5.20 — live enforcement disabled (set IPS_DRY_RUN=0 to enable)., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: DRY_RUN
+IPS Details: DRY_RUN: Would execute: [netsh advfirewall firewall add rule name='SecureMailScope_Block_192.168.5.20' dir=in action=block remoteip=192.168.5.20] — No firewall change made. Set IPS_DRY_RUN=0 to enable live enforcement.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:00:44 2026] INCIDENT LOG: 203.0.113.77
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       203.0.113.77
+Alert Time:      Wed Sep 30 14:00:44 2026
+Risk Factors:    See full report
+Remediations:    IPS DRY_RUN: Would have blocked 203.0.113.77 — live enforcement disabled (set IPS_DRY_RUN=0 to enable)., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: DRY_RUN
+IPS Details: DRY_RUN: Would execute: [netsh advfirewall firewall add rule name='SecureMailScope_Block_203.0.113.77' dir=in action=block remoteip=203.0.113.77] — No firewall change made. Set IPS_DRY_RUN=0 to enable live enforcement.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:00:44 2026] INCIDENT LOG: 185.159.82.15
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       185.159.82.15
+Alert Time:      Wed Sep 30 14:00:44 2026
+Risk Factors:    See full report
+Remediations:    IPS DRY_RUN: Would have blocked 185.159.82.15 — live enforcement disabled (set IPS_DRY_RUN=0 to enable)., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: DRY_RUN
+IPS Details: DRY_RUN: Would execute: [netsh advfirewall firewall add rule name='SecureMailScope_Block_185.159.82.15' dir=in action=block remoteip=185.159.82.15] — No firewall change made. Set IPS_DRY_RUN=0 to enable live enforcement.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:32:52 2026] INCIDENT LOG: 10.0.0.42
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       10.0.0.42
+Alert Time:      Wed Sep 30 14:32:52 2026
+Risk Factors:    See full report
+Remediations:    IPS ACTION: Firewall rule added for 10.0.0.42 (status: EXECUTED). Rule not independently re-verified., Disable SSLv2 and SSLv3 immediately. Upgrade to TLS 1.2 minimum, TLS 1.3 preferred.
+
+IPS Mitigation Status: EXECUTED
+IPS Details: Firewall rule added for 10.0.0.42 (exit 0). Note: EXECUTED does not equal VERIFIED — rule presence not re-queried.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:32:53 2026] INCIDENT LOG: 192.168.5.20
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       192.168.5.20
+Alert Time:      Wed Sep 30 14:32:53 2026
+Risk Factors:    See full report
+Remediations:    IPS ACTION: Firewall rule added for 192.168.5.20 (status: EXECUTED). Rule not independently re-verified., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: EXECUTED
+IPS Details: Firewall rule added for 192.168.5.20 (exit 0). Note: EXECUTED does not equal VERIFIED — rule presence not re-queried.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:32:53 2026] INCIDENT LOG: 203.0.113.77
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       203.0.113.77
+Alert Time:      Wed Sep 30 14:32:53 2026
+Risk Factors:    See full report
+Remediations:    IPS ACTION: Firewall rule added for 203.0.113.77 (status: EXECUTED). Rule not independently re-verified., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: EXECUTED
+IPS Details: Firewall rule added for 203.0.113.77 (exit 0). Note: EXECUTED does not equal VERIFIED — rule presence not re-queried.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:32:54 2026] INCIDENT LOG: 185.159.82.15
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       185.159.82.15
+Alert Time:      Wed Sep 30 14:32:54 2026
+Risk Factors:    See full report
+Remediations:    IPS ACTION: Firewall rule added for 185.159.82.15 (status: EXECUTED). Rule not independently re-verified., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: EXECUTED
+IPS Details: Firewall rule added for 185.159.82.15 (exit 0). Note: EXECUTED does not equal VERIFIED — rule presence not re-queried.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:33:13 2026] INCIDENT LOG: 10.0.0.42
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       10.0.0.42
+Alert Time:      Wed Sep 30 14:33:13 2026
+Risk Factors:    See full report
+Remediations:    IPS ACTION: Firewall rule added for 10.0.0.42 (status: EXECUTED). Rule not independently re-verified., Disable SSLv2 and SSLv3 immediately. Upgrade to TLS 1.2 minimum, TLS 1.3 preferred.
+
+IPS Mitigation Status: EXECUTED
+IPS Details: Firewall rule added for 10.0.0.42 (exit 0). Note: EXECUTED does not equal VERIFIED — rule presence not re-queried.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:33:13 2026] INCIDENT LOG: 192.168.5.20
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       192.168.5.20
+Alert Time:      Wed Sep 30 14:33:13 2026
+Risk Factors:    See full report
+Remediations:    IPS ACTION: Firewall rule added for 192.168.5.20 (status: EXECUTED). Rule not independently re-verified., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: EXECUTED
+IPS Details: Firewall rule added for 192.168.5.20 (exit 0). Note: EXECUTED does not equal VERIFIED — rule presence not re-queried.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:33:13 2026] INCIDENT LOG: 203.0.113.77
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       203.0.113.77
+Alert Time:      Wed Sep 30 14:33:13 2026
+Risk Factors:    See full report
+Remediations:    IPS ACTION: Firewall rule added for 203.0.113.77 (status: EXECUTED). Rule not independently re-verified., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: EXECUTED
+IPS Details: Firewall rule added for 203.0.113.77 (exit 0). Note: EXECUTED does not equal VERIFIED — rule presence not re-queried.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:33:13 2026] INCIDENT LOG: 185.159.82.15
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       185.159.82.15
+Alert Time:      Wed Sep 30 14:33:13 2026
+Risk Factors:    See full report
+Remediations:    IPS ACTION: Firewall rule added for 185.159.82.15 (status: EXECUTED). Rule not independently re-verified., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: EXECUTED
+IPS Details: Firewall rule added for 185.159.82.15 (exit 0). Note: EXECUTED does not equal VERIFIED — rule presence not re-queried.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:36:32 2026] INCIDENT LOG: 10.0.0.42
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       10.0.0.42
+Alert Time:      Wed Sep 30 14:36:32 2026
+Risk Factors:    See full report
+Remediations:    IPS ACTION: Firewall rule added for 10.0.0.42 (status: EXECUTED). Rule not independently re-verified., Disable SSLv2 and SSLv3 immediately. Upgrade to TLS 1.2 minimum, TLS 1.3 preferred.
+
+IPS Mitigation Status: EXECUTED
+IPS Details: Firewall rule added for 10.0.0.42 (exit 0). Note: EXECUTED does not equal VERIFIED — rule presence not re-queried.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:36:32 2026] INCIDENT LOG: 192.168.5.20
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       192.168.5.20
+Alert Time:      Wed Sep 30 14:36:32 2026
+Risk Factors:    See full report
+Remediations:    IPS ACTION: Firewall rule added for 192.168.5.20 (status: EXECUTED). Rule not independently re-verified., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: EXECUTED
+IPS Details: Firewall rule added for 192.168.5.20 (exit 0). Note: EXECUTED does not equal VERIFIED — rule presence not re-queried.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:36:33 2026] INCIDENT LOG: 203.0.113.77
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       203.0.113.77
+Alert Time:      Wed Sep 30 14:36:33 2026
+Risk Factors:    See full report
+Remediations:    IPS ACTION: Firewall rule added for 203.0.113.77 (status: EXECUTED). Rule not independently re-verified., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: EXECUTED
+IPS Details: Firewall rule added for 203.0.113.77 (exit 0). Note: EXECUTED does not equal VERIFIED — rule presence not re-queried.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:50:09 2026] INCIDENT LOG: 10.0.0.42
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       10.0.0.42
+Alert Time:      Wed Sep 30 14:50:09 2026
+Risk Factors:    See full report
+Remediations:    IPS ACTION: Firewall rule added for 10.0.0.42 (status: EXECUTED). Rule not independently re-verified., Disable SSLv2 and SSLv3 immediately. Upgrade to TLS 1.2 minimum, TLS 1.3 preferred.
+
+IPS Mitigation Status: EXECUTED
+IPS Details: Firewall rule added for 10.0.0.42 (exit 0). Note: EXECUTED does not equal VERIFIED — rule presence not re-queried.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:50:10 2026] INCIDENT LOG: 192.168.5.20
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       192.168.5.20
+Alert Time:      Wed Sep 30 14:50:10 2026
+Risk Factors:    See full report
+Remediations:    IPS ACTION: Firewall rule added for 192.168.5.20 (status: EXECUTED). Rule not independently re-verified., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: EXECUTED
+IPS Details: Firewall rule added for 192.168.5.20 (exit 0). Note: EXECUTED does not equal VERIFIED — rule presence not re-queried.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:50:10 2026] INCIDENT LOG: 203.0.113.77
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       203.0.113.77
+Alert Time:      Wed Sep 30 14:50:10 2026
+Risk Factors:    See full report
+Remediations:    IPS ACTION: Firewall rule added for 203.0.113.77 (status: EXECUTED). Rule not independently re-verified., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: EXECUTED
+IPS Details: Firewall rule added for 203.0.113.77 (exit 0). Note: EXECUTED does not equal VERIFIED — rule presence not re-queried.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 14:50:11 2026] INCIDENT LOG: 185.159.82.15
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       185.159.82.15
+Alert Time:      Wed Sep 30 14:50:11 2026
+Risk Factors:    See full report
+Remediations:    IPS ACTION: Firewall rule added for 185.159.82.15 (status: EXECUTED). Rule not independently re-verified., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: EXECUTED
+IPS Details: Firewall rule added for 185.159.82.15 (exit 0). Note: EXECUTED does not equal VERIFIED — rule presence not re-queried.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 15:00:59 2026] INCIDENT LOG: 1.2.3.4
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       1.2.3.4
+Alert Time:      Wed Sep 30 15:00:59 2026
+Risk Factors:    See full report
+Remediations:    See full report
+
+IPS Mitigation: Not attempted or result not provided.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 15:00:59 2026] INCIDENT LOG: 5.5.5.5
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       5.5.5.5
+Alert Time:      Wed Sep 30 15:00:59 2026
+Risk Factors:    test
+Remediations:    See full report
+
+IPS Mitigation: Not attempted or result not provided.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 15:00:59 2026] INCIDENT LOG: 9.9.9.9
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       9.9.9.9
+Alert Time:      Wed Sep 30 15:00:59 2026
+Risk Factors:    See full report
+Remediations:    See full report
+
+IPS Mitigation: Not attempted or result not provided.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 15:00:59 2026] INCIDENT LOG: 1.2.3.4
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       1.2.3.4
+Alert Time:      Wed Sep 30 15:00:59 2026
+Risk Factors:    See full report
+Remediations:    See full report
+
+IPS Mitigation Status: DRY_RUN
+IPS Details: Would have blocked
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 15:00:59 2026] INCIDENT LOG: 192.168.1.1
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       192.168.1.1
+Alert Time:      Wed Sep 30 15:00:59 2026
+Risk Factors:    See full report
+Remediations:    IPS DRY_RUN: Would have blocked 192.168.1.1 — live enforcement disabled (set IPS_DRY_RUN=0 to enable)., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: DRY_RUN
+IPS Details: DRY_RUN: Would execute: [netsh advfirewall firewall add rule name='SecureMailScope_Block_192.168.1.1' dir=in action=block remoteip=192.168.1.1] — No firewall change made. Set IPS_DRY_RUN=0 to enable live enforcement.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 15:00:59 2026] INCIDENT LOG: Unknown
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       Unknown
+Alert Time:      Wed Sep 30 15:00:59 2026
+Risk Factors:    See full report
+Remediations:    IPS FAILED: Could not block Unknown — REJECTED: 'Unknown' is not a valid IP address. Aborting to prevent command injection., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: FAILED
+IPS Details: REJECTED: 'Unknown' is not a valid IP address. Aborting to prevent command injection.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 15:01:50 2026] INCIDENT LOG: 1.2.3.4
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       1.2.3.4
+Alert Time:      Wed Sep 30 15:01:50 2026
+Risk Factors:    See full report
+Remediations:    See full report
+
+IPS Mitigation: Not attempted or result not provided.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 15:01:50 2026] INCIDENT LOG: 5.5.5.5
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       5.5.5.5
+Alert Time:      Wed Sep 30 15:01:50 2026
+Risk Factors:    test
+Remediations:    See full report
+
+IPS Mitigation: Not attempted or result not provided.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 15:01:50 2026] INCIDENT LOG: 9.9.9.9
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       9.9.9.9
+Alert Time:      Wed Sep 30 15:01:50 2026
+Risk Factors:    See full report
+Remediations:    See full report
+
+IPS Mitigation: Not attempted or result not provided.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 15:01:50 2026] INCIDENT LOG: 1.2.3.4
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       1.2.3.4
+Alert Time:      Wed Sep 30 15:01:50 2026
+Risk Factors:    See full report
+Remediations:    See full report
+
+IPS Mitigation Status: DRY_RUN
+IPS Details: Would have blocked
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 15:01:50 2026] INCIDENT LOG: 192.168.1.1
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       192.168.1.1
+Alert Time:      Wed Sep 30 15:01:50 2026
+Risk Factors:    See full report
+Remediations:    IPS DRY_RUN: Would have blocked 192.168.1.1 — live enforcement disabled (set IPS_DRY_RUN=0 to enable)., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: DRY_RUN
+IPS Details: DRY_RUN: Would execute: [netsh advfirewall firewall add rule name='SecureMailScope_Block_192.168.1.1' dir=in action=block remoteip=192.168.1.1] — No firewall change made. Set IPS_DRY_RUN=0 to enable live enforcement.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+
+============================================================
+[Wed Sep 30 15:01:50 2026] INCIDENT LOG: Unknown
+SECURITY ALERT: Critical threat detected by SecureMailScope AI Engine.
+
+Target IP:       Unknown
+Alert Time:      Wed Sep 30 15:01:50 2026
+Risk Factors:    See full report
+Remediations:    IPS FAILED: Could not block Unknown — REJECTED: 'Unknown' is not a valid IP address. Aborting to prevent command injection., Enforce STARTTLS or implicit TLS (port 465/993/995) on the mail server immediately.
+
+IPS Mitigation Status: FAILED
+IPS Details: REJECTED: 'Unknown' is not a valid IP address. Aborting to prevent command injection.
+
+Please review the attached forensic report for complete details.
+
+-- SecureMailScope Automated Response System (DO NOT REPLY)
+
+============================================================
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:35:11.774307+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "5.5.5.5", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"5.5.5.5\", \"time\": \"2026-09-30T10:35:11.776435+00:00\", \"risk_factors\": [\"test\"], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:35:11.779854+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "9.9.9.9", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"9.9.9.9\", \"time\": \"2026-09-30T10:35:11.931080+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:35:11.934511+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"DRY_RUN\", \"message\": \"Would have blocked\", \"ip\": \"1.2.3.4\", \"dry_run\": true}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:36:23.507607+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "5.5.5.5", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"5.5.5.5\", \"time\": \"2026-09-30T10:36:23.512782+00:00\", \"risk_factors\": [\"test\"], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:36:23.518507+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "9.9.9.9", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"9.9.9.9\", \"time\": \"2026-09-30T10:36:23.696737+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:36:23.700380+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"DRY_RUN\", \"message\": \"Would have blocked\", \"ip\": \"1.2.3.4\", \"dry_run\": true}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:37:06.453035+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "5.5.5.5", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"5.5.5.5\", \"time\": \"2026-09-30T10:37:06.455970+00:00\", \"risk_factors\": [\"test\"], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:37:06.461177+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "9.9.9.9", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"9.9.9.9\", \"time\": \"2026-09-30T10:37:06.623419+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:37:06.627107+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"DRY_RUN\", \"message\": \"Would have blocked\", \"ip\": \"1.2.3.4\", \"dry_run\": true}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:37:50.997894+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "5.5.5.5", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"5.5.5.5\", \"time\": \"2026-09-30T10:37:50.999676+00:00\", \"risk_factors\": [\"test\"], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:37:51.002755+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "9.9.9.9", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"9.9.9.9\", \"time\": \"2026-09-30T10:37:51.190077+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:37:51.193944+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"DRY_RUN\", \"message\": \"Would have blocked\", \"ip\": \"1.2.3.4\", \"dry_run\": true}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:39:39.923276+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "5.5.5.5", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"5.5.5.5\", \"time\": \"2026-09-30T10:39:39.925084+00:00\", \"risk_factors\": [\"test\"], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:39:39.927832+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "9.9.9.9", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"9.9.9.9\", \"time\": \"2026-09-30T10:39:40.096259+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:39:40.099554+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"DRY_RUN\", \"message\": \"Would have blocked\", \"ip\": \"1.2.3.4\", \"dry_run\": true}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:41:14.526327+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "5.5.5.5", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"5.5.5.5\", \"time\": \"2026-09-30T10:41:14.528329+00:00\", \"risk_factors\": [\"test\"], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "9.9.9.9", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"9.9.9.9\", \"time\": \"2026-09-30T10:41:14.601927+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:41:14.605524+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"DRY_RUN\", \"message\": \"Would have blocked\", \"ip\": \"1.2.3.4\", \"dry_run\": true}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:41:35.398686+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "5.5.5.5", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"5.5.5.5\", \"time\": \"2026-09-30T10:41:35.401102+00:00\", \"risk_factors\": [\"test\"], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "9.9.9.9", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"9.9.9.9\", \"time\": \"2026-09-30T10:41:35.473592+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T10:41:35.477533+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"DRY_RUN\", \"message\": \"Would have blocked\", \"ip\": \"1.2.3.4\", \"dry_run\": true}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T11:37:42.851139+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "5.5.5.5", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"5.5.5.5\", \"time\": \"2026-09-30T11:37:42.856422+00:00\", \"risk_factors\": [\"test\"], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "9.9.9.9", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"9.9.9.9\", \"time\": \"2026-09-30T11:37:42.936253+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"NOT_ATTEMPTED\"}}"}
+{"ip": "1.2.3.4", "body": "{\"subject\": \"Security posture findings requiring review\", \"ip\": \"1.2.3.4\", \"time\": \"2026-09-30T11:37:42.939923+00:00\", \"risk_factors\": [], \"remediations\": [], \"response\": {\"status\": \"DRY_RUN\", \"message\": \"Would have blocked\", \"ip\": \"1.2.3.4\", \"dry_run\": true}}"}

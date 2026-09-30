@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: securemailscope-backend
+    env: docker
+    dockerContext: ./backend
+    dockerfilePath: ./backend/Dockerfile
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: SECUREMAILSCOPE_API_TOKEN
+        generateValue: true
+      - key: ALLOWED_ORIGINS
+        value: "https://securemailscope.vercel.app" # You can update this to your actual Vercel domain later
+      - key: HOST
+        value: 0.0.0.0
+      - key: PORT
+        value: "8000"
+      - key: SECUREMAILSCOPE_DATABASE_URL
+        value: sqlite:////data/securemailscope.db
+    disk:
+      name: evidence-data
+      mountPath: /data
+      sizeGB: 1

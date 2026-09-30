@@ -1,0 +1,24 @@
+# Direct dependency versions observed in the audit environment (Python 3.14).
+# This is not a transitive lockfile or validation of the shipped pickle model.
+fastapi==0.129.0
+starlette==0.52.1
+pydantic==2.12.5
+uvicorn==0.40.0
+websockets==16.1.1
+pyshark==0.6
+cryptography==50.0.1
+pyOpenSSL==26.4.0
+python-multipart==0.0.22
+scikit-learn==1.8.0
+numpy==2.4.0
+scipy==1.16.3
+reportlab==5.0.1
+sqlalchemy==1.4.54
+scapy==2.7.0
+joblib==1.5.3
+python-dotenv==1.2.2
+requests==2.33.1
+# Development verification dependencies; no packages are installed by the tests.
+pytest==9.1.1
+httpx==0.28.1
+# yara-python is optional and unavailable in the audited environment; health reports this.

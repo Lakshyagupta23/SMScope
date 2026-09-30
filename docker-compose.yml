@@ -1,0 +1,45 @@
+# Offline analysis only: no host network, capture capabilities or firewall privileges.
+# Container requests arrive from the bridge, not loopback: configure an API token.
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8000
+      IPS_DRY_RUN: "1"
+      ENABLE_ACTIVE_RESPONSE: "0"
+      ENABLE_BULK_INGEST: "0"
+      SECUREMAILSCOPE_API_TOKEN: ${SECUREMAILSCOPE_API_TOKEN:?Set SECUREMAILSCOPE_API_TOKEN for container access}
+      SECUREMAILSCOPE_DATABASE_URL: sqlite:////data/securemailscope.db
+      SOC_LOG_PATH: /data/soc_incidents.log
+      INGRESS_DIR: /data/ingress_pcap
+      PROCESSED_DIR: /data/processed_pcap
+      FAILED_DIR: /data/failed_pcap
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:5173,http://127.0.0.1:5173}
+    volumes:
+      - evidence-data:/data
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_BACKEND_URL: http://localhost:8000
+        VITE_WS_URL: ws://localhost:8000
+    ports:
+      - "127.0.0.1:5173:5173"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  evidence-data:
