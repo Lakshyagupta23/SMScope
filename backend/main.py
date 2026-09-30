@@ -355,13 +355,71 @@ async def upload_pcap(file: UploadFile = File(...)):
 
 @app.post("/api/pcap/demo")
 async def run_demo_simulation():
-    # Do not regenerate or overwrite the user's packaged capture.
-    path = BASE_DIR / "SIH_Final_Demo.pcap"
-    if not path.is_file():
-        raise HTTPException(404, "Synthetic demo capture is not installed")
-    result = await analyze_capture(path, "synthetic_demo_not_validation_baseline")
-    result["synthetic"] = True
-    return result
+    """Generate and broadcast synthetic demo sessions directly -- no PCAP file required."""
+    import random, math
+    analysis_id = str(uuid.uuid4())
+    now = datetime.now(timezone.utc)
+    provenance = {
+        "capture_source": "synthetic_demo_not_validation_baseline",
+        "capture_sha256": "synthetic",
+        "analysis_id": analysis_id,
+        "analysis_time": now.isoformat(),
+        "python": sys.version.split()[0],
+        "source_sha256": {},
+        "packages": {},
+        "note": "Synthetic payload for SIH demonstration purposes only",
+    }
+
+    DEMO_SESSIONS = [
+        {"src_ip": "10.0.1.12",  "dst_ip": "142.250.80.78",  "dst_port": 443, "tls_version": "TLSv1.3", "cipher_suite": "TLS_AES_256_GCM_SHA384",         "cert_issuer": "Google Trust Services",    "server_name": "mail.google.com",    "flow_bytes": 92410},
+        {"src_ip": "10.0.1.14",  "dst_ip": "52.96.32.18",   "dst_port": 587, "tls_version": "TLSv1.2", "cipher_suite": "TLS_RSA_WITH_AES_128_CBC_SHA",    "cert_issuer": "Microsoft IT TLS CA 5",    "server_name": "smtp.office365.com", "flow_bytes": 43200},
+        {"src_ip": "10.0.1.22",  "dst_ip": "198.41.0.4",    "dst_port": 25,  "tls_version": None,       "cipher_suite": None,                              "cert_issuer": None,                       "server_name": None,                 "flow_bytes": 8900},
+        {"src_ip": "10.0.1.55",  "dst_ip": "104.18.22.44",  "dst_port": 443, "tls_version": "TLSv1.2", "cipher_suite": "TLS_ECDHE_RSA_WITH_RC4_128_SHA",  "cert_issuer": "Cloudflare Inc ECC CA-3",  "server_name": "mail.proton.me",     "flow_bytes": 210800},
+        {"src_ip": "10.0.1.7",   "dst_ip": "209.85.220.69", "dst_port": 993, "tls_version": "TLSv1.3", "cipher_suite": "TLS_AES_128_GCM_SHA256",          "cert_issuer": "Google Trust Services",    "server_name": "imap.gmail.com",     "flow_bytes": 55600},
+        {"src_ip": "10.0.1.88",  "dst_ip": "185.107.80.10", "dst_port": 443, "tls_version": "SSLv3",   "cipher_suite": "SSL_RSA_WITH_3DES_EDE_CBC_SHA",   "cert_issuer": "COMODO CA Limited",        "server_name": "legacy-mail.corp",   "flow_bytes": 14300},
+        {"src_ip": "10.0.1.33",  "dst_ip": "40.101.81.32",  "dst_port": 587, "tls_version": "TLSv1.2", "cipher_suite": "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384", "cert_issuer": "DigiCert Inc",      "server_name": "smtp.office365.com", "flow_bytes": 67800},
+        {"src_ip": "10.0.1.19",  "dst_ip": "173.194.68.108","dst_port": 465, "tls_version": "TLSv1.1", "cipher_suite": "TLS_RSA_WITH_AES_256_CBC_SHA",    "cert_issuer": "Equifax Secure CA",        "server_name": "smtp.gmail.com",     "flow_bytes": 31200},
+        {"src_ip": "10.0.1.41",  "dst_ip": "8.8.8.8",       "dst_port": 443, "tls_version": "TLSv1.3", "cipher_suite": "TLS_AES_256_GCM_SHA384",         "cert_issuer": "Let's Encrypt",            "server_name": "api.emailsec.io",    "flow_bytes": 18900},
+        {"src_ip": "10.0.1.60",  "dst_ip": "66.211.168.0",  "dst_port": 25,  "tls_version": "TLSv1.2", "cipher_suite": "TLS_RSA_WITH_RC4_128_MD5",        "cert_issuer": "Sendgrid Inc",             "server_name": "smtp.sendgrid.net",  "flow_bytes": 23400},
+    ]
+
+    evaluated = []
+    for index, raw in enumerate(DEMO_SESSIONS):
+        session = {**raw, "proto": "TCP", "pkt_count": random.randint(12, 340)}
+        scored = risk_engine.evaluate_session_risk(session)
+        record = {
+            **session,
+            **scored,
+            "analysis_id": analysis_id,
+            "session_id": f"{analysis_id}:{index}",
+            "capture_sha256": "synthetic",
+            "provenance": provenance,
+            "is_mitigated": False,
+        }
+        mapped = map_risk_to_frontend_format(record)
+        evaluated.append(mapped)
+
+    database.save_analysis(analysis_id, "synthetic", "synthetic_demo_not_validation_baseline", evaluated, provenance)
+
+    for record in evaluated:
+        await broadcast_message(json.dumps(record, default=str))
+
+    scores = [r["score"] for r in evaluated if isinstance(r.get("score"), (int, float))]
+    return {
+        "status": "success",
+        "analysis_id": analysis_id,
+        "capture_sha256": "synthetic",
+        "synthetic": True,
+        "summary": {
+            "streams_analyzed": len(evaluated),
+            "average_score": round(sum(scores) / len(scores), 1) if scores else None,
+            "critical": sum(r.get("status") == "critical" for r in evaluated),
+            "high": sum(r.get("status") == "high" for r in evaluated),
+        },
+        "results": evaluated,
+    }
+
+
 
 
 async def bulk_pcap_watchdog():
