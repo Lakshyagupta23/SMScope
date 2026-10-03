@@ -56,7 +56,7 @@ export default function App() {
       try {
         const response = await apiFetch('/api/sessions/history?limit=1000', { signal: controller.signal });
         const data: unknown = await response.json();
-        if (!disposed) setSessions(previous => mergeSessions(previous, sessionArray(data)));
+        if (!disposed) { setError(''); setSessions(previous => mergeSessions(previous, sessionArray(data))); }
       } catch (e) { if (!disposed) setError(errorMessage(e)); }
     };
     const connect = () => {
@@ -73,7 +73,7 @@ export default function App() {
             setError(text(data.message, text(data.detail, 'WebSocket authorization or stream error. Check System Config.')));
             return;
           }
-          if (data.type === 'authenticated' || data.type === 'auth_ok') { setConnected(true); return; }
+          if (data.type === 'authenticated' || data.type === 'auth_ok') { setError(''); setConnected(true); return; }
           if (data.type === 'bulk_mitigate' || data.type === 'response_result' || data.type === 'response_outcomes') {
             setSessions(previous => applyResponse(previous, data));
             return;
